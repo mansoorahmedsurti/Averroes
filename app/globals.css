@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-navy: #0F1B2D;
+    --text-offwhite: #F3EFE6;
+    --gold-accent: #C9A227;
+  }
+
+  body {
+    background-color: var(--bg-navy);
+    color: var(--text-offwhite);
+    font-family: var(--font-ibm-sans), sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(201, 162, 39, 0.35);
+    color: #F3EFE6;
+  }
+}
+
+/* Blueprint Grid Background Effect */
+.blueprint-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(36, 58, 91, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(36, 58, 91, 0.25) 1px, transparent 1px);
+}
+
+.blueprint-grid-dense {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(201, 162, 39, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 162, 39, 0.07) 1px, transparent 1px);
+}
+
+/* Blueprint Corner Brackets styling */
+.blueprint-corner {
+  position: relative;
+}
+
+.blueprint-corner::before,
+.blueprint-corner::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: #C9A227;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.blueprint-corner::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid #C9A227;
+  border-left: 2px solid #C9A227;
+}
+
+.blueprint-corner::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid #C9A227;
+  border-right: 2px solid #C9A227;
+}
+
+/* Technical Monospace Tag */
+.tech-tag {
+  font-family: var(--font-ibm-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+  background: rgba(15, 27, 45, 0.8);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  color: #C9A227;
+}
+
+/* Blueprint Card Frame */
+.blueprint-card {
+  background-color: rgba(22, 38, 61, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(36, 58, 91, 0.8);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.blueprint-card:hover {
+  border-color: rgba(201, 162, 39, 0.5);
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.08);
+}
+
+/* Custom Blueprint Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #070D17;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A2C46;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A227;
+}
