@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Founder & Studio Philosophy — Averroes Labs",
+  title: "Averroes Labs",
   description:
     "Learn about Averroes Labs founder Mansoor Ahmed (FAST-NUCES CS), AI certifications, background, and senior engineering studio philosophy.",
 };

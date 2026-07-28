@@ -23,7 +23,15 @@ const ibmMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Averroes Labs — Production Software & AI Systems",
+  title: {
+    default: "Averroes Labs",
+    template: "Averroes Labs",
+  },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   description:
     "Averroes Labs builds high-performance web applications, cross-platform software, AI & RAG engines, and workflow automation for growing businesses and startups.",
   keywords: [

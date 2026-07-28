@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "4-Step Engagement Workflow — Averroes Labs",
+  title: "Averroes Labs",
   description:
     "Predictable 4-stage engineering engagement process eliminating project uncertainty, scope creep, and delivery delays.",
 };

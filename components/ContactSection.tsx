@@ -29,7 +29,43 @@ export default function ContactSection() {
     setLoading(true);
     setResponseLog(null);
 
+    let clientActivationNeeded = false;
+
     try {
+      // 1. Direct browser submission to FormSubmit for production origin verification
+      const targets = ["averroes0001@gmail.com", "mansoor.ahmed11521@gmail.com"];
+      const clientFormPayload = {
+        _subject: `New Project Inquiry from ${formData.name}`,
+        _replyto: formData.email,
+        _template: "table",
+        "Client Name": formData.name,
+        "Company / Organization": formData.company || "Independent",
+        "Client Email": formData.email,
+        "Client Phone": formData.phone,
+        "Project Type": formData.projectType,
+        "Project Message": formData.message,
+      };
+
+      for (const targetEmail of targets) {
+        try {
+          const cRes = await fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json",
+            },
+            body: JSON.stringify(clientFormPayload),
+          });
+          const cJson = await cRes.json().catch(() => null);
+          if (cJson?.message?.includes("Activation")) {
+            clientActivationNeeded = true;
+          }
+        } catch (cErr) {
+          console.warn("Browser dispatch note:", cErr);
+        }
+      }
+
+      // 2. Server API Route submission
       const res = await fetch("/api/intake", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -37,6 +73,9 @@ export default function ContactSection() {
       });
 
       const data = await res.json();
+      if (clientActivationNeeded) {
+        data.needsActivation = true;
+      }
       setResponseLog(data);
 
       if (data.success) {

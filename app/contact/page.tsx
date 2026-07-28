@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Direct Contact & Project Intake — Averroes Labs",
+  title: "Averroes Labs",
   description:
     "Submit your software or AI project brief directly to lead engineer Mansoor Ahmed or reach out via email.",
 };

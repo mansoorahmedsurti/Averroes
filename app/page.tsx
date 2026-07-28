@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight, Layout, Terminal, Workflow, User, Mail, ShieldCheck, Cpu } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Averroes Labs — Production Software & AI Systems",
+  title: "Averroes Labs",
   description:
     "Averroes Labs is a software and AI studio founded by Mansoor Ahmed (FAST-NUCES CS). Building Next.js web applications, AI & RAG search engines, and workflow automation.",
 };

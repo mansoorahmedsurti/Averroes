@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight, Terminal } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Core Services & Capabilities — Averroes Labs",
+  title: "Averroes Labs",
   description:
     "Production-grade Web Development, Mobile Apps, AI & RAG Retrieval Systems, and Workflow Automation engineered by Averroes Labs.",
 };
