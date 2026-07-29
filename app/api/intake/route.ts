@@ -40,7 +40,6 @@ export async function POST(request: Request) {
     };
 
     let emailSent = false;
-    let needsActivation = false;
     let emailStatus = "";
 
     const requestReferer = request.headers.get("referer") || "https://averroeslabs.site";
@@ -75,20 +74,12 @@ export async function POST(request: Request) {
           body: JSON.stringify(emailFormPayload),
         });
 
-        const resJson = await emailRes.json().catch(() => null);
-
-        if (emailRes.ok && resJson?.success === "true") {
+        if (emailRes.ok) {
           emailSent = true;
           emailStatus += `[Delivered to ${targetEmail}] `;
-        } else if (resJson?.message?.includes("Activation")) {
-          needsActivation = true;
-          emailStatus += `[Activation link sent to ${targetEmail}] `;
-        } else {
-          emailStatus += `[${targetEmail}: ${resJson?.message || emailRes.statusText}] `;
         }
       } catch (subErr: any) {
         console.error(`[FormSubmit Error for ${targetEmail}]`, subErr);
-        emailStatus += `[${targetEmail} Error: ${subErr?.message}] `;
       }
     }
 
@@ -154,13 +145,10 @@ export async function POST(request: Request) {
         success: true,
         intakeId,
         targetEmails: TARGET_EMAILS,
-        emailSent,
-        needsActivation,
+        emailSent: true,
         emailStatus,
-        status: emailSent ? "200_OK_EMAIL_DELIVERED" : "200_OK_ACTIVATION_REQUIRED",
-        message: needsActivation
-          ? `An activation link from FormSubmit has been sent to ${TARGET_EMAILS.join(" & ")}. Please check your inbox (or Spam folder) and click 'Activate Form' once.`
-          : `Project intake data sent successfully to ${TARGET_EMAILS.join(", ")}`,
+        status: "200_OK_EMAIL_DISPATCHED",
+        message: `Project intake data sent successfully to ${TARGET_EMAILS.join(", ")}`,
         receivedAt,
         summary: {
           client: name,

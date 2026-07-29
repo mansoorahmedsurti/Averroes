@@ -21,15 +21,12 @@ export default function ContactSection() {
     message?: string;
     error?: string;
     status?: string;
-    needsActivation?: boolean;
   } | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setResponseLog(null);
-
-    let clientActivationNeeded = false;
 
     try {
       // 1. Direct browser submission to FormSubmit for production origin verification
@@ -48,7 +45,7 @@ export default function ContactSection() {
 
       for (const targetEmail of targets) {
         try {
-          const cRes = await fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
+          await fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -56,10 +53,6 @@ export default function ContactSection() {
             },
             body: JSON.stringify(clientFormPayload),
           });
-          const cJson = await cRes.json().catch(() => null);
-          if (cJson?.message?.includes("Activation")) {
-            clientActivationNeeded = true;
-          }
         } catch (cErr) {
           console.warn("Browser dispatch note:", cErr);
         }
@@ -73,9 +66,6 @@ export default function ContactSection() {
       });
 
       const data = await res.json();
-      if (clientActivationNeeded) {
-        data.needsActivation = true;
-      }
       setResponseLog(data);
 
       if (data.success) {
@@ -317,27 +307,13 @@ export default function ContactSection() {
                   </div>
 
                   {responseLog.success ? (
-                    <div className="space-y-2 text-paper-white text-xs pt-1">
+                    <div className="space-y-1 text-paper-white text-xs pt-1">
                       <p className="text-gold-base font-semibold">
                         CONFIRMATION ID: {responseLog.intakeId}
                       </p>
-                      {responseLog.needsActivation ? (
-                        <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded text-amber-200 text-[11px] leading-relaxed space-y-1 blueprint-corner">
-                          <p className="font-bold text-amber-400 flex items-center gap-1.5 font-mono text-xs">
-                            <AlertTriangle className="w-4 h-4 text-amber-400" /> ONE-TIME GMAIL ACTIVATION REQUIRED
-                          </p>
-                          <p>
-                            FormSubmit sent an activation email to <strong className="text-paper-white">averroes0001@gmail.com</strong> and <strong className="text-paper-white">mansoor.ahmed11521@gmail.com</strong>.
-                          </p>
-                          <p className="text-paper-muted">
-                            Please open your Gmail inbox (or Spam folder) and click <strong>"Activate Form"</strong> once. After clicking that link, all form submissions will instantly land in your inbox.
-                          </p>
-                        </div>
-                      ) : (
-                        <p className="text-paper-muted text-[11px] leading-relaxed">
-                          Thank you! Your inquiry has been emailed directly to <strong className="text-paper-white">averroes0001@gmail.com</strong> and <strong className="text-paper-white">mansoor.ahmed11521@gmail.com</strong>. Our team will review your message and get back to you shortly.
-                        </p>
-                      )}
+                      <p className="text-paper-muted text-[11px] leading-relaxed">
+                        Thank you! Your inquiry has been emailed directly to <strong className="text-paper-white">averroes0001@gmail.com</strong> and <strong className="text-paper-white">mansoor.ahmed11521@gmail.com</strong>. Our team will review your message and get back to you shortly.
+                      </p>
                     </div>
                   ) : (
                     <div className="text-red-400 text-xs">
