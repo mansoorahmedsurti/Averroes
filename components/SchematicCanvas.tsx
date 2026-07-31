@@ -6,7 +6,7 @@ export default function SchematicCanvas() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
       <svg
-        className="w-full h-full opacity-35"
+        className="w-full h-full opacity-40"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1200 800"
         preserveAspectRatio="xMidYMid slice"
@@ -14,13 +14,13 @@ export default function SchematicCanvas() {
         <defs>
           <linearGradient id="traceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#C9A227" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#4F98CA" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#1E314D" stopOpacity="0.1" />
+            <stop offset="50%" stopColor="#38BDF8" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#1E2D4A" stopOpacity="0.1" />
           </linearGradient>
           
           <pattern id="gridPattern" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1B2E48" strokeWidth="0.8" strokeDasharray="3 3" />
-            <circle cx="60" cy="0" r="1.5" fill="#C9A227" opacity="0.3" />
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1E2D4A" strokeWidth="0.8" strokeDasharray="3 3" />
+            <circle cx="60" cy="0" r="1.5" fill="#38BDF8" opacity="0.35" />
           </pattern>
         </defs>
 
@@ -44,12 +44,12 @@ export default function SchematicCanvas() {
         <g fill="#C9A227">
           <g className="animate-pulse">
             <circle cx="350" cy="150" r="4" />
-            <circle cx="350" cy="150" r="8" fill="none" stroke="#C9A227" strokeWidth="1" opacity="0.5" />
+            <circle cx="350" cy="150" r="8" fill="none" stroke="#C9A227" strokeWidth="1" opacity="0.6" />
           </g>
           
           <g className="animate-pulse" style={{ animationDelay: "1s" }}>
-            <circle cx="750" cy="250" r="4" fill="#E5B82E" />
-            <circle cx="750" cy="250" r="10" fill="none" stroke="#E5B82E" strokeWidth="1" opacity="0.4" />
+            <circle cx="750" cy="250" r="4" fill="#E5C158" />
+            <circle cx="750" cy="250" r="10" fill="none" stroke="#E5C158" strokeWidth="1" opacity="0.5" />
           </g>
 
           <g className="animate-pulse" style={{ animationDelay: "2s" }}>
@@ -57,15 +57,15 @@ export default function SchematicCanvas() {
           </g>
 
           <g className="animate-pulse" style={{ animationDelay: "1.5s" }}>
-            <circle cx="680" cy="570" r="4" fill="#4F98CA" />
-            <circle cx="680" cy="570" r="8" fill="none" stroke="#4F98CA" strokeWidth="1" opacity="0.4" />
+            <circle cx="680" cy="570" r="4" fill="#38BDF8" />
+            <circle cx="680" cy="570" r="8" fill="none" stroke="#38BDF8" strokeWidth="1" opacity="0.5" />
           </g>
         </g>
 
         {/* Technical Coordinate Annotations */}
-        <text x="360" y="142" fill="#C9A227" fontSize="10" fontFamily="monospace" opacity="0.7">NODE_ALPHA // 0x4F</text>
-        <text x="760" y="242" fill="#8A99AD" fontSize="10" fontFamily="monospace" opacity="0.7">BUS_ROUTE_02</text>
-        <text x="460" y="262" fill="#C9A227" fontSize="10" fontFamily="monospace" opacity="0.7">GATE_RAG_VEC</text>
+        <text x="360" y="142" fill="#C9A227" fontSize="10" fontFamily="monospace" opacity="0.8">AVERROES_CORE // 0x4F</text>
+        <text x="760" y="242" fill="#CBD5E1" fontSize="10" fontFamily="monospace" opacity="0.8">RAG_VOICE_ROUTE</text>
+        <text x="460" y="262" fill="#38BDF8" fontSize="10" fontFamily="monospace" opacity="0.8">MOBILE_CROSS_PLATFORM</text>
       </svg>
     </div>
   );

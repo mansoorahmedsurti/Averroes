@@ -1,138 +1,205 @@
 "use client";
 
 import React from "react";
-import { Layout, Smartphone, Bot, Workflow, CheckCircle2, ArrowRight } from "lucide-react";
+import { Smartphone, Layout, Mic, Database, Workflow, CheckCircle2, ArrowRight, Globe, ShieldCheck, Zap } from "lucide-react";
 
-const services = [
+const adServices = [
   {
-    id: "web",
-    title: "Websites & Web Apps",
-    icon: Layout,
-    outcome: "Fast, modern websites and custom web applications built to impress visitors, load instantly, and turn traffic into paying clients.",
-    deliverables: [
-      "Ultra-fast loading times (loads in under 1 second)",
-      "Custom admin portals to easily manage your data & content",
-      "Built for Google Search (SEO optimized) & works on all screens",
-    ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel", "Python"],
-    metric: "< 1s Average Page Load",
-  },
-  {
+    num: "1",
     id: "mobile",
-    title: "Mobile & Web Apps",
+    title: "MOBILE APPS CROSS PLATFORM",
     icon: Smartphone,
-    outcome: "Easy-to-use mobile apps for iPhone, Android, and web that keep your business running smoothly, even when offline.",
-    deliverables: [
-      "Single codebase that works on iPhone (iOS), Android & Web",
-      "Instant data updates with offline state support",
-      "Secure user login and protected account information",
+    bullets: [
+      "High-performance native & cross-platform apps.",
+      "Single codebase, rapid development.",
+      "Scalable backends, real impact.",
     ],
-    stack: ["Flutter", "Supabase", "PostgreSQL", "REST APIs", "WebSockets"],
-    metric: "Smooth 60FPS UI",
+    badges: ["Fast Development", "Native Performance", "Single Codebase", "Scalable Backends"],
+    tech: ["FLUTTER", "REACT NATIVE", "DART", "KOTLIN", "SWIFT"],
+    sideBox: {
+      title: "iOS & Android",
+      desc: "ONE APP. EVERY DEVICE. REAL IMPACT.",
+    },
   },
   {
-    id: "ai",
-    title: "Smart AI & Search Tools",
-    icon: Bot,
-    outcome: "Custom AI assistants and search engines trained on your company's own documents to give accurate, instant answers with exact source links.",
-    deliverables: [
-      "Instant AI search across your PDFs, manuals & team files",
-      "Accurate answers with direct links back to original documents",
-      "Built-in safety checks so the AI never makes up information",
+    num: "2",
+    id: "web",
+    title: "CUSTOM WEBSITES & MVPS",
+    icon: Layout,
+    bullets: [
+      "Fast, scalable, user-centric web applications.",
+      "From concept to MVP launch.",
+      "Performance focused, SEO optimized.",
     ],
-    stack: ["Python", "FastAPI", "Qdrant", "Neon DB", "OpenAI SDK", "LangChain"],
-    metric: "99.4% Citation Accuracy",
+    badges: ["Blazing Fast", "Responsive by Design", "Secure & Scalable", "MVP in Days"],
+    tech: ["NEXT.JS", "REACT", "TAILWIND CSS", "NODE.JS", "POSTGRES"],
+    sideBox: {
+      title: "Live Website",
+      link: "averroes01.vercel.app",
+      items: ["Modern UI/UX", "SEO Optimized", "Performance Focused", "Deployed on Vercel"],
+    },
   },
   {
-    id: "automation",
-    title: "Business Process Automation",
+    num: "3",
+    id: "rag-voice",
+    title: "RAG VOICE & AUTOMATION",
+    icon: Mic,
+    bullets: [
+      "24/7 AI callers for support, FAQs, & appointment booking",
+      "Speed-to-lead outbound calls to qualify leads instantly",
+      "Integrate with Calendars, CRM, & business tools",
+    ],
+    badges: ["24/7 AI Callers", "Speed-to-Lead", "Calendar & CRM Sync"],
+    tech: ["YAPI", "RETELL", "BLAND.AI"],
+    sideBox: null,
+  },
+  {
+    num: "4",
+    id: "rag-pipelines",
+    title: "CUSTOM RAG PIPELINES",
+    icon: Database,
+    bullets: [
+      "Train bots on your PDFs, docs, and databases",
+      "Context-aware answers with grounded results",
+      "Built with FastAPI, Qdrant, and Neon Postgres",
+    ],
+    badges: ["PDF & Doc Training", "Grounded Results", "Vector Search"],
+    tech: ["FASTAPI", "QDRANT", "NEON", "OPENAI"],
+    sideBox: null,
+  },
+  {
+    num: "5",
+    id: "workflow-automation",
+    title: "WORKFLOW AUTOMATION",
     icon: Workflow,
-    outcome: "Eliminate repetitive manual data entry and connect your favorite software tools so your team saves dozens of hours every week.",
-    deliverables: [
-      "Automatic data syncing between your CRM, email, and spreadsheet tools",
-      "Instant notifications and lead enrichment workflows",
-      "Error-proof background automation that runs 24/7",
+    bullets: [
+      "Automate processes across multiple apps & platforms",
+      "Custom integration in APIs, webhooks & microservices",
+      "Orchestrated data & workflows for real time business impact",
     ],
-    stack: ["n8n", "Make.com", "Zapier", "Python", "Webhooks"],
-    metric: "15+ Hours Saved/Week",
+    badges: ["Cross-App Sync", "APIs & Webhooks", "Real-Time Impact"],
+    tech: ["N8N", "MAKE.COM", "ZAPIER", "APIS"],
+    sideBox: null,
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 bg-navy-dark relative border-b border-navy-border/60">
+    <section id="services" className="py-24 bg-navy-dark relative border-b border-navy-border/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16">
-          <div className="flex items-center gap-3 mb-2 font-mono text-xs text-gold-base tracking-widest uppercase">
-            <span className="px-2 py-0.5 bg-navy-card border border-gold-base/30">WHAT WE DO</span>
+          <div className="flex items-center gap-3 mb-2 font-mono text-xs text-gold-base tracking-widest uppercase font-semibold">
+            <span className="px-2.5 py-0.5 bg-navy-card border border-gold-base/40">OUR 5 CORE SERVICES</span>
             <span className="text-paper-subtle">-----------------------------</span>
           </div>
-          <h2 className="font-heading text-3xl sm:text-5xl font-bold text-paper-white tracking-tight mb-4">
-            Services Built for Real Business Results.
+          <h2 className="font-heading text-3xl sm:text-5xl font-extrabold text-paper-white tracking-tight mb-4">
+            Smart, Scalable, AI-Powered Digital Solutions.
           </h2>
           <p className="font-sans text-paper-muted text-base sm:text-lg max-w-3xl">
-            We focus on software that solves real problems. Whether you need a stunning new website, a mobile app, or smart AI tools, we build solutions that work reliably.
+            From cross-platform mobile apps to custom RAG pipelines and workflow automation, we build software that drives real business results.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((svc) => {
+        {/* Services List */}
+        <div className="space-y-8">
+          {adServices.map((svc) => {
             const Icon = svc.icon;
             return (
               <div
                 key={svc.id}
-                className="blueprint-card p-6 sm:p-8 relative group flex flex-col justify-between blueprint-corner"
+                className="blueprint-card p-6 sm:p-8 relative blueprint-corner hover:border-gold-base transition-all"
               >
-                {/* Header info */}
-                <div>
-                  <div className="flex items-center justify-between mb-6 border-b border-navy-border pb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 bg-navy-dark border border-gold-base/40 text-gold-base">
-                        <Icon className="w-5 h-5" />
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                  {/* Left Column: Number Badge & Main Details */}
+                  <div className={svc.sideBox ? "lg:col-span-8" : "lg:col-span-12"}>
+                    <div className="flex items-center gap-4 mb-4">
+                      {/* Numbered Box from Ad */}
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-navy-dark border-2 border-navy-border text-paper-white font-heading text-xl sm:text-2xl font-black shrink-0 blueprint-corner">
+                        {svc.num}
                       </div>
                       <div>
-                        <h3 className="font-heading text-xl sm:text-2xl font-bold text-paper-white group-hover:text-gold-bright transition-colors">
+                        <h3 className="font-heading text-xl sm:text-3xl font-extrabold text-paper-white tracking-tight">
                           {svc.title}
                         </h3>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Outcome description */}
-                  <p className="font-sans text-paper-white text-base leading-relaxed mb-6 font-medium">
-                    {svc.outcome}
-                  </p>
+                    {/* Bullet Points */}
+                    <ul className="space-y-2.5 mb-6 pl-14">
+                      {svc.bullets.map((b, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base font-sans text-paper-white font-medium">
+                          <CheckCircle2 className="w-4 h-4 text-gold-base shrink-0 mt-1" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                  {/* Key Deliverables Bullet Points */}
-                  <ul className="space-y-2.5 mb-8">
-                    {svc.deliverables.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-xs font-sans text-paper-muted">
-                        <CheckCircle2 className="w-4 h-4 text-gold-base shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                    {/* Feature Badges from Ad */}
+                    {svc.badges && (
+                      <div className="flex flex-wrap gap-2 pl-14 mb-6">
+                        {svc.badges.map((badge) => (
+                          <span
+                            key={badge}
+                            className="px-2.5 py-1 bg-navy-dark/90 border border-navy-border text-paper-muted font-mono text-xs flex items-center gap-1.5"
+                          >
+                            <Zap className="w-3 h-3 text-cyan-base" />
+                            <span>{badge}</span>
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
-                {/* Supporting Credibility - Tech Stack */}
-                <div className="pt-6 border-t border-navy-border/80">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-[11px] text-paper-muted uppercase tracking-wider">
-                      TECHNOLOGY USED
-                    </span>
-                    <span className="font-mono text-[11px] text-gold-base font-semibold">
-                      {svc.metric}
-                    </span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {svc.stack.map((tech) => (
-                      <span key={tech} className="tech-tag">
-                        {tech}
+                    {/* Tech Badges Row */}
+                    <div className="pt-4 border-t border-navy-border/80 pl-14 flex flex-wrap items-center gap-2 font-mono text-xs">
+                      <span className="text-paper-subtle font-bold uppercase tracking-wider mr-2">
+                        TECHNOLOGIES / TOOLS:
                       </span>
-                    ))}
+                      {svc.tech.map((t) => (
+                        <span
+                          key={t}
+                          className="px-2.5 py-1 bg-navy-dark border border-cyan-base/30 text-cyan-base font-mono text-xs font-semibold"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
+
+                  {/* Right Column: Side Feature Box (for items 1 & 2 matching Ad) */}
+                  {svc.sideBox && (
+                    <div className="lg:col-span-4 p-5 bg-navy-dark/90 border border-gold-base/30 blueprint-corner space-y-3">
+                      <div className="flex items-center gap-2 text-gold-base font-mono text-xs font-bold uppercase border-b border-navy-border pb-2">
+                        <Globe className="w-4 h-4" />
+                        <span>{svc.sideBox.title}</span>
+                      </div>
+                      {svc.sideBox.desc && (
+                        <p className="font-heading font-extrabold text-lg text-paper-white tracking-tight">
+                          {svc.sideBox.desc}
+                        </p>
+                      )}
+                      {svc.sideBox.link && (
+                        <a
+                          href={`https://${svc.sideBox.link}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-mono text-xs text-cyan-base hover:underline block font-semibold"
+                        >
+                          {svc.sideBox.link} ↗
+                        </a>
+                      )}
+                      {svc.sideBox.items && (
+                        <ul className="space-y-1.5 pt-2 border-t border-navy-border/60">
+                          {svc.sideBox.items.map((item, idx) => (
+                            <li key={idx} className="flex items-center gap-2 text-xs font-sans text-paper-muted">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-gold-base" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             );
@@ -140,18 +207,18 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Bottom CTA */}
-        <div className="mt-12 p-6 bg-navy-card/60 border border-navy-border flex flex-col sm:flex-row items-center justify-between gap-4 blueprint-corner">
+        <div className="mt-12 p-6 bg-navy-card/80 border border-gold-base/40 flex flex-col sm:flex-row items-center justify-between gap-4 blueprint-corner">
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-gold-base font-bold">[CUSTOM PROJECT]</span>
-            <span className="font-sans text-sm text-paper-muted">
-              Need a tailored project combining Web + AI + Automation?
+            <span className="font-mono text-xs text-gold-base font-bold">[CUSTOM AI & WEB SOLUTION]</span>
+            <span className="font-sans text-sm text-paper-muted font-medium">
+              Need a custom architecture combining Web + Voice + RAG + Automation?
             </span>
           </div>
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase font-bold text-gold-base hover:text-gold-bright transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase font-extrabold text-navy-dark bg-gold-base hover:bg-gold-bright px-5 py-3 border border-gold-bright transition-all whitespace-nowrap blueprint-corner"
           >
-            <span>Ask Us About Your Custom Project</span>
+            <span>DISCUSS YOUR CUSTOM PROJECT</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

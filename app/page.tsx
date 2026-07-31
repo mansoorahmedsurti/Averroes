@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { ArrowRight, Layout, Terminal, Workflow, User, Mail, ShieldCheck, Cpu } from "lucide-react";
+import { ArrowRight, Layout, Workflow, User, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Averroes Labs",
+  title: "Averroes Labs — Smart, Scalable, AI-Powered Digital Solutions",
   description:
-    "Averroes Labs is a software and AI studio founded by Mansoor Ahmed (FAST-NUCES CS). Building Next.js web applications, AI & RAG search engines, and workflow automation.",
+    "Averroes Labs is an AI & software studio building Mobile Apps, Custom Websites, RAG Voice & Automation, RAG Pipelines, and Workflow Automation.",
 };
 
 export default function Home() {
@@ -18,18 +20,18 @@ export default function Home() {
       <HeroSection />
 
       {/* Overview Navigation Grid Section */}
-      <section className="py-20 bg-navy-dark border-b border-navy-border/60">
+      <section className="py-20 bg-navy-dark border-b border-navy-border/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <div className="flex items-center gap-3 mb-2 font-mono text-xs text-gold-base tracking-widest uppercase">
-              <span className="px-2 py-0.5 bg-navy-card border border-gold-base/30">EXPLORE OUR STUDIO</span>
+            <div className="flex items-center gap-3 mb-2 font-mono text-xs text-gold-base tracking-widest uppercase font-semibold">
+              <span className="px-2.5 py-0.5 bg-navy-card border border-gold-base/30">EXPLORE OUR STUDIO</span>
               <span className="text-paper-subtle">-----------------------------</span>
             </div>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-paper-white tracking-tight">
-              Explore What We Do
+            <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-paper-white tracking-tight">
+              Explore Our Capabilities
             </h2>
             <p className="font-sans text-paper-muted text-base max-w-2xl mt-2">
-              Learn more about our core services, real project demos, simple 4-step process, and founder background.
+              Learn more about our 5 core services, simple 4-step workflow, and lead developer credentials.
             </p>
           </div>
 
@@ -46,14 +48,14 @@ export default function Home() {
                   </div>
                 </div>
                 <h3 className="font-heading text-xl font-bold text-paper-white group-hover:text-gold-bright transition-colors mb-2">
-                  Our Services
+                  Our 5 Core Services
                 </h3>
                 <p className="font-sans text-paper-muted text-xs leading-relaxed">
-                  Websites, mobile apps, custom AI search tools, and business automation.
+                  Mobile Apps, Websites & MVPs, RAG Voice, Custom RAG Pipelines, and Workflow Automation.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-navy-border/60 flex items-center gap-1.5 font-mono text-xs text-gold-base font-semibold group-hover:translate-x-1 transition-transform">
-                <span>VIEW SERVICES</span>
+                <span>VIEW 5 SERVICES</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>
             </Link>
@@ -73,7 +75,7 @@ export default function Home() {
                   How We Work
                 </h3>
                 <p className="font-sans text-paper-muted text-xs leading-relaxed">
-                  Simple, transparent workflow: Planning, Building, Hand-off, and 30 days free support.
+                  Simple, transparent 4-step workflow: Discovery, Building, Launch, and 30 days free support.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-navy-border/60 flex items-center gap-1.5 font-mono text-xs text-gold-base font-semibold group-hover:translate-x-1 transition-transform">
@@ -97,7 +99,7 @@ export default function Home() {
                   About Us
                 </h3>
                 <p className="font-sans text-paper-muted text-xs leading-relaxed">
-                  Founded by Mansoor Ahmed. Background, AI certifications, and work approach.
+                  Lead developer Mansoor Ahmed (FAST-NUCES CS). AI certifications and work approach.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-navy-border/60 flex items-center gap-1.5 font-mono text-xs text-gold-base font-semibold group-hover:translate-x-1 transition-transform">
@@ -109,34 +111,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Founder Highlight Banner */}
-      <section className="py-20 bg-navy-darkest border-b border-navy-border/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center blueprint-card p-8 sm:p-12 blueprint-corner">
-            <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-navy-dark border border-gold-base/30 text-gold-base font-mono text-xs">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>FOUNDED & OPERATED BY MANSOOR AHMED</span>
-              </div>
-              <h3 className="font-heading text-2xl sm:text-4xl font-bold text-paper-white">
-                Work Directly With the Builder. No Middlemen.
-              </h3>
-              <p className="font-sans text-paper-muted text-sm sm:text-base leading-relaxed">
-                When you partner with Averroes Labs, you work directly with founder and lead developer Mansoor Ahmed. Honest advice, clear plans, and software delivered on time.
-              </p>
-            </div>
-            <div className="lg:col-span-4 text-left lg:text-right">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 px-7 py-4 font-mono text-xs font-bold uppercase text-navy-dark bg-gold-base hover:bg-gold-bright border border-gold-bright transition-all blueprint-corner shadow-lg shadow-gold-base/15"
-              >
-                <span>TALK TO MANSOOR</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Services Section */}
+      <ServicesSection />
+
+      {/* Contact Section */}
+      <ContactSection />
 
       <Footer />
     </main>

@@ -10,31 +10,38 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          darkest: "#070D17",
-          dark: "#0F1B2D",
-          surface: "#16263D",
-          card: "#1A2C46",
-          border: "#243A5B",
-          hover: "#2A446B",
+          darkest: "#070D18",
+          dark: "#0B132B",
+          surface: "#111E38",
+          card: "#152238",
+          border: "#1E2D4A",
+          hover: "#26395C",
         },
         gold: {
           muted: "rgba(201, 162, 39, 0.15)",
           border: "rgba(201, 162, 39, 0.35)",
           base: "#C9A227",
-          bright: "#E5B82E",
+          bright: "#E5C158",
           glow: "#FFD700",
         },
+        cyan: {
+          base: "#38BDF8",
+          bright: "#7DD3FC",
+          muted: "rgba(56, 189, 248, 0.15)",
+          border: "rgba(56, 189, 248, 0.35)",
+        },
         blueprint: {
-          line: "#1B2E48",
-          grid: "#132339",
-          cyan: "#4F98CA",
+          line: "#1E2D4A",
+          grid: "#111E38",
+          cyan: "#38BDF8",
           amber: "#D97706",
           emerald: "#10B981",
         },
         paper: {
-          white: "#F3EFE6",
-          muted: "#94A3B8",
-          subtle: "#64748B",
+          white: "#FFFFFF",
+          slate: "#F8FAFC",
+          muted: "#CBD5E1",
+          subtle: "#94A3B8",
         },
       },
       fontFamily: {
@@ -43,7 +50,7 @@ const config: Config = {
         mono: ["var(--font-ibm-mono)", "monospace"],
       },
       backgroundImage: {
-        'blueprint-grid': "radial-gradient(circle, rgba(201,162,39,0.12) 1px, transparent 1px)",
+        'blueprint-grid': "radial-gradient(circle, rgba(56,189,248,0.12) 1px, transparent 1px)",
         'schematic-lines': "linear-gradient(to right, rgba(30,49,77,0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(30,49,77,0.3) 1px, transparent 1px)",
       },
       animation: {
