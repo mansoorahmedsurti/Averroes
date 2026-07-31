@@ -35,10 +35,10 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Brand Emblem & Wordmark */}
+          {/* Brand Emblem & Wordmark with Favicon */}
           <Link href="/" className="flex items-center gap-3 group focus:outline-none">
-            <div className="relative w-9 h-9 flex items-center justify-center bg-slate-900 border border-gold-base blueprint-corner group-hover:bg-navy-dark transition-colors shadow-sm">
-              <Compass className="w-5 h-5 text-gold-base group-hover:rotate-45 transition-transform duration-500" />
+            <div className="relative w-9 h-9 flex items-center justify-center bg-slate-900 border border-gold-base blueprint-corner shadow-sm overflow-hidden p-0.5">
+              <img src="/icon.png" alt="Averroes Labs Favicon" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="font-heading font-extrabold text-lg tracking-tight text-slate-900 group-hover:text-gold-base transition-colors leading-none">

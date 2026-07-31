@@ -74,17 +74,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${spaceGrotesk.variable} ${ibmSans.variable} ${ibmMono.variable} bg-navy-dark text-paper-white antialiased min-h-screen relative selection:bg-gold-base/30 selection:text-paper-white`}
+        className={`${spaceGrotesk.variable} ${ibmSans.variable} ${ibmMono.variable} bg-white text-slate-900 antialiased min-h-screen relative selection:bg-gold-base/25 selection:text-slate-900`}
       >
         {/* Subtle grid background texture */}
         <div 
-          className="fixed inset-0 blueprint-grid-bg opacity-40 pointer-events-none z-0" 
+          className="fixed inset-0 blueprint-grid-bg opacity-30 pointer-events-none z-0" 
           aria-hidden="true" 
         />
         
         {/* Subtle top ambient glow */}
         <div 
-          className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-navy-surface/30 via-gold-base/5 to-transparent pointer-events-none z-0 blur-3xl" 
+          className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-slate-100/50 via-gold-base/5 to-transparent pointer-events-none z-0 blur-3xl" 
           aria-hidden="true" 
         />
 

@@ -16,8 +16,8 @@ export default function Footer() {
           {/* Col 1: Wordmark & Slogan matching Ad */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 flex items-center justify-center bg-navy-card border border-gold-base/60 blueprint-corner">
-                <Compass className="w-4 h-4 text-gold-base" />
+              <div className="w-9 h-9 flex items-center justify-center bg-slate-900 border border-gold-base blueprint-corner overflow-hidden p-0.5 shadow-sm">
+                <img src="/icon.png" alt="Averroes Labs Favicon" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-lg text-paper-white tracking-tight leading-none">
