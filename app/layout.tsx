@@ -28,9 +28,13 @@ export const metadata: Metadata = {
     template: "Averroes Labs",
   },
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      { url: "/icon.png?v=2", type: "image/png" },
+      { url: "/favicon.png?v=2", type: "image/png" },
+      { url: "/favicon.ico?v=2" },
+    ],
+    shortcut: "/icon.png?v=2",
+    apple: "/icon.png?v=2",
   },
   description:
     "Averroes Labs builds high-performance web applications, cross-platform software, AI & RAG engines, and workflow automation for growing businesses and startups.",
