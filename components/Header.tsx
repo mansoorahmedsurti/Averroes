@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, Menu, X, ArrowUpRight, Mail } from "lucide-react";
+import { Compass, Menu, X, Mail } from "lucide-react";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -29,22 +29,22 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-navy-dark/95 backdrop-blur-md border-b border-navy-border py-3 shadow-2xl"
-          : "bg-navy-dark/80 backdrop-blur-sm py-4 border-b border-navy-border/60"
+          ? "bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-md"
+          : "bg-white/80 backdrop-blur-sm py-4 border-b border-slate-100"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Brand Emblem & Wordmark matching the Ad */}
+          {/* Brand Emblem & Wordmark */}
           <Link href="/" className="flex items-center gap-3 group focus:outline-none">
-            <div className="relative w-9 h-9 flex items-center justify-center bg-navy-card border border-gold-base/60 blueprint-corner group-hover:border-gold-bright transition-colors shadow-md">
+            <div className="relative w-9 h-9 flex items-center justify-center bg-slate-900 border border-gold-base blueprint-corner group-hover:bg-navy-dark transition-colors shadow-sm">
               <Compass className="w-5 h-5 text-gold-base group-hover:rotate-45 transition-transform duration-500" />
             </div>
             <div className="flex flex-col">
-              <span className="font-heading font-bold text-lg tracking-tight text-paper-white group-hover:text-gold-bright transition-colors leading-none">
+              <span className="font-heading font-extrabold text-lg tracking-tight text-slate-900 group-hover:text-gold-base transition-colors leading-none">
                 AVERROES <span className="text-gold-base font-light">LABS</span>
               </span>
-              <span className="font-mono text-[9px] text-paper-subtle tracking-wider uppercase mt-0.5">
+              <span className="font-mono text-[9px] text-slate-500 tracking-wider uppercase mt-0.5 font-semibold">
                 BUILDING INTELLIGENCE. SHAPING TOMORROW.
               </span>
             </div>
@@ -60,8 +60,8 @@ export default function Header() {
                   href={link.href}
                   className={`font-mono text-xs tracking-wider transition-colors ${
                     isActive
-                      ? "text-gold-base font-bold underline underline-offset-8 decoration-gold-base"
-                      : "text-paper-muted hover:text-paper-white"
+                      ? "text-slate-900 font-bold underline underline-offset-8 decoration-gold-base"
+                      : "text-slate-600 hover:text-slate-900 font-medium"
                   }`}
                 >
                   {link.label}
@@ -71,9 +71,9 @@ export default function Header() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-navy-card hover:bg-navy-surface border border-gold-base/40 hover:border-gold-base font-mono text-xs text-gold-base font-bold uppercase transition-all blueprint-corner"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white font-mono text-xs font-bold uppercase transition-all blueprint-corner shadow-sm"
             >
-              <Mail className="w-3.5 h-3.5" />
+              <Mail className="w-3.5 h-3.5 text-gold-base" />
               <span>GET IN TOUCH</span>
             </Link>
           </nav>
@@ -81,7 +81,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-paper-muted hover:text-gold-base focus:outline-none"
+            className="md:hidden p-2 text-slate-700 hover:text-gold-base focus:outline-none"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -91,15 +91,15 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-navy-card/95 border-b border-navy-border backdrop-blur-lg px-4 pt-4 pb-6 space-y-4">
+        <div className="md:hidden bg-white/98 border-b border-slate-200 backdrop-blur-lg px-4 pt-4 pb-6 space-y-4">
           <nav className="flex flex-col gap-3 font-mono text-xs pt-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`p-2 border-b border-navy-border/50 ${
-                  pathname === link.href ? "text-gold-base font-bold" : "text-paper-white hover:text-gold-base"
+                className={`p-2 border-b border-slate-100 ${
+                  pathname === link.href ? "text-slate-900 font-bold" : "text-slate-700 hover:text-gold-base"
                 }`}
               >
                 {link.label}
